@@ -2,7 +2,6 @@ public class Cliente{
         private String email;
         private String nome;
         private String cpf;
-
         public static Cliente criar(String nome, String email, String cpf){
                 Cliente cliente = new Cliente();
                 cliente.setNome(nome);

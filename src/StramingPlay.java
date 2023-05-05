@@ -1,4 +1,3 @@
-import java.lang.invoke.ConstantBootstraps;
 import java.util.Scanner;
 
 public class StramingPlay {
@@ -50,17 +49,45 @@ public class StramingPlay {
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite o CPF do cliente a ser deletado");
         ClienteRepository.deletarCliente(sc.next());
+        System.out.println("Deletado com sucesso");
     }
     public static void menuCombo(){
         System.out.println("Digite 1, para assinar combo");
         System.out.println("Digite 2, para ver informações da assinatura");
         System.out.println("Digite 3, para cancelar assinatura");
     }
-    public static void menu1Combos(){
+    public static void assinarCombo(){
+        Scanner sc = new Scanner(System.in);
         System.out.println("Os combos disponíveis são:");
-        System.out.println("Combo 1: Netflix + HBO");
-        System.out.println("Combo 2: Netflix + Amazon");
-        System.out.println("Combo 3: Amazon + HBO");
+        System.out.println("Combo 1: Netflix + HBO por R$25");
+        System.out.println("Combo 2: Netflix + Amazon por R$30");
+        System.out.println("Combo 3: Amazon + HBO por R$20");
+        System.out.println("Para assinar o combo 1, digite 1");
+        System.out.println("Para assinar o combo 2, digite 2");
+        System.out.println("Para assinar o combo 3, digite 3");
+        int menuAssinarCombo = sc.nextInt();
+        if(menuAssinarCombo == 1){
+            System.out.println("Digite o seu CPF");
+            System.out.println("O numero da sua Assinatura é:   " + Combo1.assinar(sc.next()));
+            System.out.println("Sua assinatura foi concluida com sucesso");
+        }
+        if(menuAssinarCombo == 2){
+            System.out.println("Digite o seu CPF");
+            System.out.println("O numero da sua Assinatura é:   " + Combo2.assinar(sc.next()));
+            System.out.println("Sua assinatura foi concluida com sucesso");
+        }
+        if(menuAssinarCombo == 3){
+            System.out.println("Digite o seu CPF");
+            System.out.println("O numero de sua Assinatura é:   " +  Combo3.assinar(sc.next()));
+            System.out.println("Sua assinatura foi concluida com sucesso");
+        }
+
+    }
+    public static void getInfoAssinatura(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite o numero da sua Assinatura");
+        Combo combo = ComboRepository.buscarComboPorNumero(sc.nextInt());
+        System.out.println("NUMERO: " + combo.getNumeroCombo() + " VALOR  ");
     }
     public static void menuAssinarCombo(){
 
@@ -90,7 +117,7 @@ public class StramingPlay {
                 menuCombo();
                 int menu2 = sc.nextInt();
                 if(menu2 == 1){
-                    menu1Combos();
+                    assinarCombo();
                 }
                 if(menu2 == 2){
 
