@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public abstract class Combo  {
+public abstract class Combo {
     private int valor;
     private int numeroCombo;
     private Cliente cliente;

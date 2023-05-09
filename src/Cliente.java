@@ -16,7 +16,6 @@ public class Cliente{
                 this.nome = nome;
         }
 
-
         public String getCpf() {
                 return cpf;
         }
@@ -24,11 +23,14 @@ public class Cliente{
                 this.cpf = cpf;
         }
 
-
         public String getEmail() {
                 return email;
         }
         public void setEmail(String email) {
                 this.email = email;
+        }
+
+        public void getCliente(){
+                System.out.println("NOME:  " + getNome() + "  CPF:  " + getCpf() + "  EMAIL:  " + getEmail());
         }
 }

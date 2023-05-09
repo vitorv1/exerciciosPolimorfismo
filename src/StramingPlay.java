@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class StramingPlay {
@@ -28,6 +29,7 @@ public class StramingPlay {
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite o cpf do cliente desejado");
         Cliente cliente = ClienteRepository.buscarCliente(sc.next());
+        cliente.getCliente();
         System.out.println("Caso deseje alterar NOME, digite 1");
         System.out.println("Caso deseje alterar CPF, digite 2");
         System.out.println("Caso deseje alterar EMAIL, digite 3");
@@ -35,14 +37,20 @@ public class StramingPlay {
         if(menuSet == 1){
             System.out.println("Digite o nome do novo do cliente");
             cliente.setNome(sc.next());
+            System.out.println("Alterado com sucesso");
+            cliente.getCliente();
         }
         if(menuSet == 2){
             System.out.println("Digite o novo CPF do cliente");
             cliente.setCpf(sc.next());
+            System.out.println("Alterado com sucesso");
+            cliente.getCliente();
         }
         if(menuSet == 3){
             System.out.println("Digite o novo EMAIL do cliente");
             cliente.setEmail(sc.next());
+            System.out.println("Alterado com sucesso");
+            cliente.getCliente();
         }
     }
     public static void deletarCliente(){
@@ -87,10 +95,22 @@ public class StramingPlay {
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite o numero da sua Assinatura");
         Combo combo = ComboRepository.buscarComboPorNumero(sc.nextInt());
-        System.out.println("NUMERO: " + combo.getNumeroCombo() + " VALOR  ");
+        System.out.println("NUMERO: " + combo.getNumeroCombo() + " VALOR  R$:" + combo.getValor());
+        System.out.println("NOME DO CLIENTE:  " + combo.getCliente().getNome() + "  CPF DO CLIENTE:  " + combo.getCliente().getCpf());
+        if(combo.getValor() == 25){
+            System.out.println("ITENS DO COMBO: Netflix e HBO" );
+        }
+        else if (combo.getValor() == 30){
+            System.out.println("ITENS DO COMBO: Netflix e Amazon");
+        }else{
+            System.out.println("ITENS DO PEDIDO: Amazon e HBO");
+        }
     }
-    public static void menuAssinarCombo(){
-
+    public static void menuCancelarAssinatura(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Dgite o numero da assinatura que deseja cancelar");
+        ComboRepository.deletarCombo(sc.nextInt());
+        System.out.println("Cancelado com sucesso");
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -120,11 +140,15 @@ public class StramingPlay {
                     assinarCombo();
                 }
                 if(menu2 == 2){
-
+                    getInfoAssinatura();
                 }
                 if(menu2 == 3){
-
+                    menuCancelarAssinatura();
                 }
+            }
+            System.out.println("Caso deseje continuar digite 'sim' ou 'nao'");
+            if(sc.next().equals("nao")){
+                loop = false;
             }
         }
     }
