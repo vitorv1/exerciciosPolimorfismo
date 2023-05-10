@@ -1,3 +1,5 @@
+package Streaming;
+
 public class Cliente{
         private String email;
         private String nome;

@@ -1,4 +1,5 @@
-import java.sql.SQLOutput;
+package Streaming;
+
 import java.util.Scanner;
 
 public class StramingPlay {
@@ -67,9 +68,9 @@ public class StramingPlay {
     public static void assinarCombo(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Os combos disponíveis são:");
-        System.out.println("Combo 1: Netflix + HBO por R$25");
-        System.out.println("Combo 2: Netflix + Amazon por R$30");
-        System.out.println("Combo 3: Amazon + HBO por R$20");
+        System.out.println("Streaming.Combo 1: Netflix + HBO por R$25");
+        System.out.println("Streaming.Combo 2: Netflix + Amazon por R$30");
+        System.out.println("Streaming.Combo 3: Amazon + HBO por R$20");
         System.out.println("Para assinar o combo 1, digite 1");
         System.out.println("Para assinar o combo 2, digite 2");
         System.out.println("Para assinar o combo 3, digite 3");

@@ -1,3 +1,5 @@
+package Streaming;
+
 public class Combo2 extends Combo {
 
     public static int assinar(String cpf){

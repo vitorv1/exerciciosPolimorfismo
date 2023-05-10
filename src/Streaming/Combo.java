@@ -1,3 +1,5 @@
+package Streaming;
+
 import java.util.Random;
 
 public abstract class Combo {
