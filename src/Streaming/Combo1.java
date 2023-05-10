@@ -1,11 +1,6 @@
 package Streaming;
 
-public class Combo1 extends Combo implements AssinarCombo{
-
-    @Override
-    public Combo assinarCombo() {
-        return new Combo1();
-    }
+public class Combo1 extends Combo{
 
     public static int assinar(String cpf){
         Combo1 combo1 = new Combo1();
