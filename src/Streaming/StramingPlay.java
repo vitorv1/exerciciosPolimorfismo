@@ -67,35 +67,29 @@ public class StramingPlay {
     }
     public static void assinarCombo(){
         Scanner sc = new Scanner(System.in);
+        System.out.println("Digite seu CPF");
+        Cliente cliente = ClienteRepository.buscarCliente(sc.next());
         System.out.println("Os combos disponíveis são:");
-        System.out.println("Streaming.Combo 1: Netflix + HBO por R$25");
-        System.out.println("Streaming.Combo 2: Netflix + Amazon por R$30");
-        System.out.println("Streaming.Combo 3: Amazon + HBO por R$20");
+        System.out.println("Combo 1: Netflix + HBO por R$25");
+        System.out.println("Combo 2: Netflix + Amazon por R$30");
+        System.out.println("Combo 3: Amazon + HBO por R$20");
         System.out.println("Para assinar o combo 1, digite 1");
         System.out.println("Para assinar o combo 2, digite 2");
         System.out.println("Para assinar o combo 3, digite 3");
         int menuAssinarCombo = sc.nextInt();
         if(menuAssinarCombo == 1){
-            System.out.println("Digite o seu CPF");
-            System.out.println("O numero da sua Assinatura é:   " + Combo1.assinar(sc.next()));
-            System.out.println("Sua assinatura foi concluida com sucesso");
+            System.out.println("O numero do seu pedido:  " + Pedido.criarPedido(cliente, Combos.COMBO1));
         }
         if(menuAssinarCombo == 2){
-            System.out.println("Digite o seu CPF");
-            System.out.println("O numero da sua Assinatura é:   " + Combo2.assinar(sc.next()));
-            System.out.println("Sua assinatura foi concluida com sucesso");
+            System.out.println("O numero do seu pedido:  " + Pedido.criarPedido(cliente, Combos.COMBO2));
         }
         if(menuAssinarCombo == 3){
-            System.out.println("Digite o seu CPF");
-            System.out.println("O numero de sua Assinatura é:   " +  Combo3.assinar(sc.next()));
-            System.out.println("Sua assinatura foi concluida com sucesso");
+            System.out.println("O numero do seu pedido:  " + Pedido.criarPedido(cliente, Combos.COMBO3));
         }
-
     }
-    public static void getInfoAssinatura(){
+    public static void getInfoCombo(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Digite o numero da sua Assinatura");
-        Combo combo = ComboRepository.buscarComboPorNumero(sc.nextInt());
+        System.out.println("Digite o numero do seu Pedido");
         System.out.println("NUMERO: " + combo.getNumeroCombo() + " VALOR  R$:" + combo.getValor());
         System.out.println("NOME DO CLIENTE:  " + combo.getCliente().getNome() + "  CPF DO CLIENTE:  " + combo.getCliente().getCpf());
         if(combo.getValor() == 25){
@@ -107,10 +101,10 @@ public class StramingPlay {
             System.out.println("ITENS DO PEDIDO: Amazon e HBO");
         }
     }
-    public static void menuCancelarAssinatura(){
+    public static void menuCancelarCombo(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Dgite o numero da assinatura que deseja cancelar");
-        ComboRepository.deletarCombo(sc.nextInt());
+        ProdutoRepository.deletarProduto(sc.nextInt());
         System.out.println("Cancelado com sucesso");
     }
     public static void main(String[] args) {
@@ -141,10 +135,10 @@ public class StramingPlay {
                     assinarCombo();
                 }
                 if(menu2 == 2){
-                    getInfoAssinatura();
+                    getInfoCombo();
                 }
                 if(menu2 == 3){
-                    menuCancelarAssinatura();
+                    menuCancelarCombo();
                 }
             }
             System.out.println("Caso deseje continuar digite 'sim' ou 'nao'");

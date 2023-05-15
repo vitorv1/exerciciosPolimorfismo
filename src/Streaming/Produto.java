@@ -2,12 +2,12 @@ package Streaming;
 
 import java.util.Random;
 
-public abstract class Combo {
+public  class Produto{
     private int valor;
     private int numeroCombo;
     private Cliente cliente;
 
-    public Combo (){
+    public Produto(){
         Random random = new Random();
         setNumeroCombo(random.nextInt(100));
     }
