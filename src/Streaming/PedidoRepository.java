@@ -7,7 +7,10 @@ public abstract class PedidoRepository {
     public static void salvarPedido(Pedido pedido){
         pedidos.add(pedido);
     }
-    public static void buscarPedido(int numeroPedido){
-        pedidos.stream().filter(Pedido -> Pedido.getNumero() == numeroPedido).findFirst().orElseThrow(() -> new RuntimeException("Pedido não encontrado"));
+    public static Pedido buscarPedido(int numeroPedido){
+        return pedidos.stream().filter(Pedido -> Pedido.getNumero() == numeroPedido).findFirst().orElseThrow(() -> new RuntimeException("Pedido não encontrado"));
+    }
+    public static void deletarPedido(int numeroPedido){
+        pedidos.remove(pedidos.stream().filter(Pedido -> Pedido.getNumero() == numeroPedido).findFirst().orElseThrow(() -> new RuntimeException("Pedido não encontrado")));
     }
 }

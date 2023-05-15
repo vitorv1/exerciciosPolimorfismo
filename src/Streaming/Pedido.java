@@ -5,17 +5,15 @@ import java.util.Random;
 
 public class Pedido {
     private int numero;
-
     private double valor;
-
     private Cliente cliente;
 
-    List<Combos> combos = new ArrayList<Combos>();
+    private Combos combo;
 
-    public static double criarPedido(Cliente cliente, Combos combo){
+    public static int criarPedido(Cliente cliente, Combos combo){
         Pedido pedido = new Pedido();
+        pedido.setCombo(combo);
         pedido.setCliente(cliente);
-        pedido.combos.add(combo);
         pedido.setValor(combo.getValor());
         Random random = new Random();
         pedido.setNumero(random.nextInt(100));
@@ -28,6 +26,15 @@ public class Pedido {
         this.cliente = cliente;
     }
 
+    public Combos getCombo() {
+        return combo;
+    }
+    public void setCombo(Combos combo) {
+        this.combo = combo;
+    }
+    public Cliente getCliente() {
+        return cliente;
+    }
     public void setValor(double valor) {
         this.valor = valor;
     }

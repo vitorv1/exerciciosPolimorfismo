@@ -1,5 +1,6 @@
 package Streaming;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class StramingPlay {
@@ -90,21 +91,15 @@ public class StramingPlay {
     public static void getInfoCombo(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite o numero do seu Pedido");
-        System.out.println("NUMERO: " + combo.getNumeroCombo() + " VALOR  R$:" + combo.getValor());
-        System.out.println("NOME DO CLIENTE:  " + combo.getCliente().getNome() + "  CPF DO CLIENTE:  " + combo.getCliente().getCpf());
-        if(combo.getValor() == 25){
-            System.out.println("ITENS DO COMBO: Netflix e HBO" );
-        }
-        else if (combo.getValor() == 30){
-            System.out.println("ITENS DO COMBO: Netflix e Amazon");
-        }else{
-            System.out.println("ITENS DO PEDIDO: Amazon e HBO");
-        }
+        Pedido pedido = PedidoRepository.buscarPedido(sc.nextInt());
+        System.out.println("NUMERO: " + pedido.getNumero() + " VALOR  R$:" + pedido.getValor());
+        System.out.println("NOME DO CLIENTE:  " + pedido.getCliente().getNome() + "  CPF DO CLIENTE:  " + pedido.getCliente().getCpf());
+        System.out.println("ITEN DO PEDIDO:  " + pedido.getCombo().getNome());
     }
     public static void menuCancelarCombo(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Dgite o numero da assinatura que deseja cancelar");
-        ProdutoRepository.deletarProduto(sc.nextInt());
+        PedidoRepository.deletarPedido(sc.nextInt());
         System.out.println("Cancelado com sucesso");
     }
     public static void main(String[] args) {
