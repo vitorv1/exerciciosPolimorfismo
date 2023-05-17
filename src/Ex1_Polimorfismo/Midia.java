@@ -2,7 +2,7 @@ package Ex1_Polimorfismo;
 
 import java.util.Scanner;
 
-public class Midia {
+public  class Midia {
     private int codigo;
     private double preco;
     private String nome;
