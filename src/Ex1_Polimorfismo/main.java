@@ -15,8 +15,11 @@ public class main {
        if( menu == 1){
            CD cd = new CD();
            cd.inserirDados();
+           CDRepository.salvar(cd);
        }else{
-
+           DVD dvd = new DVD();
+           dvd.inserirDados();
+           DVDRepository.salvar(dvd);
        }
     }
 }
