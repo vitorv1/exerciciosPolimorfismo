@@ -9,6 +9,7 @@ public class main {
         System.out.println("Caso deseje cadastrar dvd, digite 2");
     }
     public static void main(String[] args) {
+        System.out.println("oi");
        Scanner sc = new Scanner(System.in);
        menu();
        int menu = sc.nextInt();
