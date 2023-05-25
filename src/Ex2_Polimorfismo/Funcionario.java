@@ -46,14 +46,6 @@ public abstract class Funcionario {
         return salario;
     }
 
-    public void setInfo(String nome, String idade, String cpf, String email, double salario){
-      funcionario.setNome(nome);
-      funcionario.setCpf(cpf);
-      funcionario.setIdade(idade);
-      funcionario.setEmail(email);
-      funcionario.setSalario(salario);
-    }
-
     public String getInfo (){
        return getNome() + getIdade() + getCpf() + getEmail() + getSalario();
     }

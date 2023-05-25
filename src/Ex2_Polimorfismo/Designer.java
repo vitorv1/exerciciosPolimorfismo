@@ -1,4 +1,4 @@
 package Ex2_Polimorfismo;
 
-public class Designer extends Funcionario{
+public class Designer extends Funcionario {
 }

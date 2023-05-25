@@ -15,8 +15,4 @@ public class Gerente extends Funcionario{
         return super.getInfo() + getSenha();
     }
 
-    public void setInfo(Funcionario funcionario, String nome, String idade, String cpf, String email, double salario, String senha) {
-        super.setInfo(funcionario, nome, idade, cpf, email, salario);
-        setSenha(senha);
-    }
 }
