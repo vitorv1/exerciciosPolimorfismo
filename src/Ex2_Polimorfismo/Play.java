@@ -15,19 +15,26 @@ public class Play {
         System.out.println("PARA DELETAR UM FUNCIONÁRIO DIGITE 4");
     }
     public static void menuCadastroFuncionario(){
-        System.out.println("DIGITE RESPECTIVAMENTE O: NOME, IDADE, CPF, EMAIL, TIPO DE FUNCIONÁRIO");
+        System.out.println("DIGITE O TIPO DE FUNCIONÁRIO QUE SERA CADASTRADO");
+        System.out.println("DIGITE RESPECTIVAMENTE O: NOME, IDADE, CPF, EMAIL");
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        menuPrincipal();
-        if(sc.nextInt() == 1){
-            menuFuncionario();
-            String funcionario;
-            switch (sc.next()){
-                case :
-            }
-        }else{
+        boolean stop = true;
+        while (stop) {
+            menuPrincipal();
+            if (sc.nextInt() == 1) {
+                menuFuncionario();
+                switch (sc.next()) {
+                    case "Gerente":
+                        new Gerente(sc.next(), sc.next(), sc.next(), sc.next());
+                        stop = false;
+                    case "Editor De Video":
+                        new EditorDeVideo(sc.next(), sc.next(), sc.next(), sc.next());
+                }
+            } else {
 
+            }
         }
 
     }
