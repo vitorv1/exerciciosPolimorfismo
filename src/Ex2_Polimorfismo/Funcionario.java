@@ -7,10 +7,6 @@ public abstract class Funcionario {
     private String email;
     private double salario;
 
-
-
-
-
     public String getNome() {
         return nome;
     }

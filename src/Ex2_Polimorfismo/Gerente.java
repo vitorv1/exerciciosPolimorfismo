@@ -1,12 +1,23 @@
 package Ex2_Polimorfismo;
 
-public class Gerente extends Funcionario{
-    private String senha;
+import java.util.Random;
 
-    public String getSenha() {
+public class Gerente extends Funcionario{
+    private int senha;
+
+    public Gerente(String nome, String idade, String cpf, String email){
+        Random random = new Random();
+        super.setNome(nome);
+        super.setIdade(idade);
+        super.setCpf(cpf);
+        super.setEmail(email);
+        setSenha(random.nextInt(100));
+    }
+
+    public int getSenha() {
         return senha;
     }
-    public void setSenha(String senha) {
+    public void setSenha(int senha) {
         this.senha = senha;
     }
 

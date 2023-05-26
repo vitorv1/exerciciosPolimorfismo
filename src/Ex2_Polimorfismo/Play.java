@@ -1,5 +1,7 @@
 package Ex2_Polimorfismo;
 
+import java.util.Scanner;
+
 public class Play {
 
     public static void menuPrincipal(){
@@ -14,9 +16,19 @@ public class Play {
     }
     public static void menuCadastroFuncionario(){
         System.out.println("DIGITE RESPECTIVAMENTE O: NOME, IDADE, CPF, EMAIL, TIPO DE FUNCIONÁRIO");
-
     }
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        menuPrincipal();
+        if(sc.nextInt() == 1){
+            menuFuncionario();
+            String funcionario;
+            switch (sc.next()){
+                case :
+            }
+        }else{
+
+        }
 
     }
 }
