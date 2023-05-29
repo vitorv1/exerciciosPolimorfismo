@@ -27,10 +27,16 @@ public class Play {
                 menuFuncionario();
                 switch (sc.next()) {
                     case "Gerente":
-                        new Gerente(sc.next(), sc.next(), sc.next(), sc.next());
+                        Funcionario funcionario = new Gerente(sc.next(), sc.next(), sc.next(), sc.next());
+                        FuncionarioRepository.salvar(funcionario);
                         stop = false;
                     case "Editor De Video":
-                        new EditorDeVideo(sc.next(), sc.next(), sc.next(), sc.next());
+                       Funcionario funcionario1 = new EditorDeVideo(sc.next(), sc.next(), sc.next(), sc.next());
+                       FuncionarioRepository.salvar(funcionario1);
+                       stop = false;
+
+                    case "Designer":
+                        Funcionario funcionario2 = new Designer(sc.next(), sc.next(), sc.next(), sc.next())
                 }
             } else {
 

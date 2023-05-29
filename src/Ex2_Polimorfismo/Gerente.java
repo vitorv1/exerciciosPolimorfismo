@@ -7,6 +7,7 @@ public class Gerente extends Funcionario{
 
     public Gerente(String nome, String idade, String cpf, String email){
         Random random = new Random();
+        super.setSalario(Salario.SALARRIOGERENTE);
         super.setNome(nome);
         super.setIdade(idade);
         super.setCpf(cpf);

@@ -5,7 +5,7 @@ public abstract class Funcionario {
     private String idade;
     private String cpf;
     private String email;
-    private double salario;
+    private Salario salario;
 
     public String getNome() {
         return nome;
@@ -35,7 +35,7 @@ public abstract class Funcionario {
         this.email = email;
     }
 
-    public void setSalario(double salario) {
+    public void setSalario (Salario salario){
         this.salario = salario;
     }
     public double getSalario() {
@@ -43,7 +43,7 @@ public abstract class Funcionario {
     }
 
     public String getInfo (){
-       return getNome() + getIdade() + getCpf() + getEmail() + getSalario();
+       return getNome() + getIdade() + getCpf() + getEmail() ;
     }
 
 

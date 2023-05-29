@@ -13,4 +13,8 @@ public enum Salario {
         this.valor = valor;
     }
 
+    public double getValor(){
+        return valor;
+    }
+
 }

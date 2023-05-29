@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Designer extends Funcionario {
     public Designer(String nome, String idade, String cpf, String email){
+        super.setSalario(Salario.SALARIODESINGNER);
         super.setNome(nome);
         super.setIdade(idade);
         super.setCpf(cpf);
