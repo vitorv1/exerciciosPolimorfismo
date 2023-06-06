@@ -38,12 +38,16 @@ public abstract class Funcionario {
     public void setSalario (Salario salario){
         this.salario = salario;
     }
-    public double getSalario() {
-        return salario;
-    }
 
     public String getInfo (){
-       return getNome() + getIdade() + getCpf() + getEmail() ;
+       return "NOME: " + getNome() + "IDADE: " + getIdade() + "CPF: " + getCpf() + "EMAIL: " + getEmail() ;
+    }
+
+    public void setInfo(String nome, String idade, String cpf, String email){
+        setNome(nome);
+        setIdade(idade);
+        setCpf(cpf);
+        setEmail(email);
     }
 
 
