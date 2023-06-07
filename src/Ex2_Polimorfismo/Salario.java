@@ -17,4 +17,11 @@ public enum Salario {
         return valor;
     }
 
+    public double folhaPagamento(Funcionario funcionario){
+        double salario = funcionario.getSalario().getValor();
+        salario = salario - (5/100);
+        if(salario > 900 && salario <= 1500){
+               
+        }
+    }
 }

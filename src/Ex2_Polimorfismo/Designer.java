@@ -9,5 +9,6 @@ public class Designer extends Funcionario {
         super.setIdade(idade);
         super.setCpf(cpf);
         super.setEmail(email);
+        super.setTipo("Designer");
     }
 }

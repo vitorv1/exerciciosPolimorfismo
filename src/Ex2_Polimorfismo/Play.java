@@ -1,4 +1,5 @@
 package Ex2_Polimorfismo;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Play {
@@ -23,18 +24,18 @@ public class Play {
                 switch (sc.next()) {
                     case "Gerente":
                         System.out.println("DIGITE RESPECTIVAMENTE O: NOME, IDADE, CPF, EMAIL");
-                        Funcionario funcionario = new Gerente(sc.next(), sc.next(), sc.next(), sc.next());
-                        FuncionarioRepository.salvar(funcionario);
+                        Funcionario funcionarioGerente = new Gerente(sc.next(), sc.next(), sc.next(), sc.next());
+                        FuncionarioRepository.salvar(funcionarioGerente);
                         System.out.println("CADASTRADO COM SUCESSO");
                     case "Editor De Video":
                         System.out.println("DIGITE RESPECTIVAMENTE O: NOME, IDADE, CPF, EMAIL");
-                        Funcionario funcionario1 = new EditorDeVideo(sc.next(), sc.next(), sc.next(), sc.next());
-                        FuncionarioRepository.salvar(funcionario1);
+                        Funcionario funcionarioEditorVideo = new EditorDeVideo(sc.next(), sc.next(), sc.next(), sc.next());
+                        FuncionarioRepository.salvar(funcionarioEditorVideo);
                         System.out.println("CADASTRADO COM SUCESSO");
                     case "Designer":
                         System.out.println("DIGITE RESPECTIVAMENTE O: NOME, IDADE, CPF, EMAIL");
-                        Funcionario funcionario2 = new Designer(sc.next(), sc.next(), sc.next(), sc.next());
-                        FuncionarioRepository.salvar(funcionario2);
+                        Funcionario funcionarioDesigner = new Designer(sc.next(), sc.next(), sc.next(), sc.next());
+                        FuncionarioRepository.salvar(funcionarioDesigner);
                         System.out.println("CADASTRADO COM SUCESSO");
                 }
     }
@@ -52,10 +53,11 @@ public class Play {
         System.out.println("CASO DESEJE ALTERAR SOMENTE IDADE, DIGITE 2");
         System.out.println("CASO DESEJE ALTERAR SOMENTE CPF, DIGITE 3");
         System.out.println("CASO DESEJE ALTERAR SOMENTE EMAIL, DIGITE 4");
+        System.out.println("CASO DESEJE ALTERAR SOMENTE O CARGO, DIGITE 5");
         switch (sc.nextInt()) {
             case 1:
-                System.out.println("DIGITE RESPECTIVAMENTE OS NOVOS: NOME, IDADE, CPF, EMAIL");
-                funcionario.setInfo(sc.next(), sc.next(), sc.next(), sc.next());
+                System.out.println("DIGITE RESPECTIVAMENTE OS NOVOS: NOME, IDADE, CPF, EMAIL, E CARGO");
+                funcionario.setInfo(sc.next(), sc.next(), sc.next(), sc.next(), sc.next());
                 System.out.println("ALTERADO COM SUCESSSO");
             case 2:
                 System.out.println("DIGITE O NOVO NOME: ");
@@ -69,6 +71,10 @@ public class Play {
                 System.out.println("DIGITE O NOVO EMAIL: ");
                 funcionario.setEmail(sc.next());
                 System.out.println("ALTERADO COM SUCESSSO");
+            case 5 :
+                System.out.println("DIGITE O NOVO CARGO(GERENTE, EDITOR DE VIDEO, DESIGNER)");
+                funcionario.setTipo(sc.next());
+                System.out.println("ALTERADO COM SUCESSO");
         }
     }
 

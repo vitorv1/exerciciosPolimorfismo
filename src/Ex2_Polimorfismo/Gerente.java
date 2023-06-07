@@ -12,6 +12,7 @@ public class Gerente extends Funcionario{
         super.setIdade(idade);
         super.setCpf(cpf);
         super.setEmail(email);
+        super.setTipo("Gerente");
         setSenha(random.nextInt(100));
     }
 
