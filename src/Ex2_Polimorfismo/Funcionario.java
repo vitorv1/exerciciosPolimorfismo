@@ -6,8 +6,9 @@ public abstract class Funcionario {
     private String cpf;
     private String email;
     private Salario salario;
-
+    private int desconto;
     public String tipo;
+
     public String getNome() {
         return nome;
     }
@@ -15,7 +16,6 @@ public abstract class Funcionario {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
     public String getIdade() {
         return idade;
     }
@@ -23,6 +23,7 @@ public abstract class Funcionario {
     public void setIdade(String idade) {
         this.idade = idade;
     }
+
     public String getCpf() {
         return cpf;
     }
@@ -44,16 +45,23 @@ public abstract class Funcionario {
     public Salario getSalario() {
         return salario;
     }
-
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
     public String getTipo() {
         return tipo;
     }
 
     public String getInfo (){
        return "NOME: " + getNome() + "IDADE: " + getIdade() + "CPF: " + getCpf() + "EMAIL: " + getEmail() + "TIPO DE FUNCIONÁRIO: " + getTipo();
+    }
+
+    public void setDesconto(int desconto) {
+        this.desconto = desconto;
+    }
+    public int getDesconto() {
+        return desconto;
     }
 
     public void setInfo(String nome, String idade, String cpf, String email, String tipo){
