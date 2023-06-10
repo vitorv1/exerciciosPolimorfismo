@@ -26,16 +26,19 @@ public abstract class Menu {
                 Funcionario funcionarioGerente = new Gerente(sc.next(), sc.next(), sc.next(), sc.next());
                 FuncionarioRepository.salvar(funcionarioGerente);
                 System.out.println("CADASTRADO COM SUCESSO");
-            case "Editor De Video":
+                break;
+            case "Vendedor":
                 System.out.println("DIGITE RESPECTIVAMENTE O: NOME, IDADE, CPF, EMAIL");
-                Funcionario funcionarioEditorVideo = new EditorDeVideo(sc.next(), sc.next(), sc.next(), sc.next());
-                FuncionarioRepository.salvar(funcionarioEditorVideo);
+                Funcionario funcionarioVendedor = new Vendedor(sc.next(), sc.next(), sc.next(), sc.next());
+                FuncionarioRepository.salvar(funcionarioVendedor);
                 System.out.println("CADASTRADO COM SUCESSO");
+                break;
             case "Designer":
                 System.out.println("DIGITE RESPECTIVAMENTE O: NOME, IDADE, CPF, EMAIL");
                 Funcionario funcionarioDesigner = new Designer(sc.next(), sc.next(), sc.next(), sc.next());
                 FuncionarioRepository.salvar(funcionarioDesigner);
                 System.out.println("CADASTRADO COM SUCESSO");
+                break;
         }
     }
     public static void menuGetInfoFuncionarios(){

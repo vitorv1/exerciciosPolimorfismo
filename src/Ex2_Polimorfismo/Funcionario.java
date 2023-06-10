@@ -54,7 +54,7 @@ public abstract class Funcionario {
     }
 
     public String getInfo (){
-       return "NOME: " + getNome() + "IDADE: " + getIdade() + "CPF: " + getCpf() + "EMAIL: " + getEmail() + "TIPO DE FUNCIONÁRIO: " + getTipo();
+       return "NOME: " + getNome() + "  " + "IDADE: " + getIdade() + "  " + "CPF: " + getCpf() + "  " + "EMAIL: " + getEmail() + "  " + "TIPO DE FUNCIONÁRIO: " + getTipo();
     }
 
     public void setDesconto(int desconto) {
