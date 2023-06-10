@@ -12,7 +12,7 @@ public class Gerente extends Funcionario{
         super.setIdade(idade);
         super.setCpf(cpf);
         super.setEmail(email);
-        super.setTipo("Gerente");
+        super.setTipo(1);
         setSenha(random.nextInt(100));
     }
 
@@ -25,7 +25,7 @@ public class Gerente extends Funcionario{
 
     @Override
     public String getInfo() {
-        return super.getInfo() + getSenha();
+        return super.getInfo();
     }
 
 }
