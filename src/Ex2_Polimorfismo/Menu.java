@@ -59,8 +59,8 @@ public abstract class Menu {
         System.out.println("CASO DESEJE ALTERAR SOMENTE A IDADE, DIGITE 6");
         switch (sc.nextInt()) {
             case 1:
-                System.out.println("DIGITE RESPECTIVAMENTE OS NOVOS: NOME, IDADE, CPF, EMAIL, E CARGO");
-                funcionario.setInfo(sc.next(), sc.next(), sc.next(), sc.next(), sc.next());
+                System.out.println("DIGITE RESPECTIVAMENTE OS NOVOS: NOME, IDADE, CPF, EMAIL, E CARGO(1 - GERENTE | 2 - VENDEDOR | 3 - DESIGNER)");
+                funcionario.setInfo(sc.next(), sc.next(), sc.next(), sc.next(), sc.nextInt());
                 System.out.println("ALTERADO COM SUCESSSO");
                 break;
             case 2:
@@ -112,7 +112,7 @@ public abstract class Menu {
         System.out.println("DIGITE O CPF DO FUNCIONÁRIO");
         Funcionario funcionario = FuncionarioRepository.buscar(sc.next());
         double salario = Salario.folhaPagamento(funcionario);
-        System.out.println("NOME: " + funcionario.getNome() + "  " + "CARGO: " + funcionario.getTipo() + "  " + "SALARIO BRUTO: " + funcionario.getSalario().getValor());
+        System.out.println("NOME: " + funcionario.getNome() + "  " + "CARGO: " + funcionario.validaTipo(funcionario.getTipo()) + "  " + "SALARIO BRUTO: " + funcionario.getSalario().getValor());
         System.out.println("SALARIO LINQUIDO: " + salario + "  " + "DESCONTOS: " + "5% DO SINDICATO" + " + " + funcionario.getDesconto() + "% " + " DE IMPOSTO DE RENDA");
     }
     public static boolean menuValidacao(){

@@ -71,6 +71,14 @@ public abstract class Funcionario {
         setEmail(email);
         setTipo(tipo);
     }
+    public String validaTipo(int tipo){
+        switch (tipo){
+            case 1 : return "GERENTE";
+            case 2 : return "VENDEDOR";
+            case 3 : return "DESIGNER";
+        }
+        return "";
+    }
 
 
 }
