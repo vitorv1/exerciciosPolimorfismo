@@ -3,15 +3,13 @@ package Ex2_Polimorfismo;
 import java.util.SimpleTimeZone;
 
 public enum Salario {
-    SALARRIOGERENTE(1, 3000),
-    SALARIODESINGNER(2, 2500),
-    SALARIOEDITORDEVIDEO(3, 2000);
+    SALARRIOGERENTE( 3000),
+    SALARIODESINGNER( 2500),
+    SALARIOEDITORDEVIDEO( 2000);
 
-    private int codigo;
     private double valor;
 
-    Salario(int codigo, double valor){
-        this.codigo = codigo;
+    Salario(double valor){
         this.valor = valor;
     }
 
@@ -23,9 +21,6 @@ public enum Salario {
         valor = valor * porcentagem;
         return valor = valor / 100;
     }
-    /*public static String menuFolhaPagamento(double salario, Funcionario funcionario, String desconto){
-        return "NOME: " + funcionario.getNome() + "  " + "SALARIO BRUTO: " + funcionario.getSalario() + "/n" + "CARGO: " + funcionario.getTipo() + "  " + "SALARIO LIQUIDO: " + salario + "  " + "DESCONTOS: " + "5% SINDICATO" + "/n" + desconto + "IMPOSTO DE RENDA";
-    }*/
     public static double folhaPagamento(Funcionario funcionario){
         double salario = funcionario.getSalario().getValor();
         if(salario >= 900 && salario <= 1500){
